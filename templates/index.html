@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Popup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        #popupOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1050;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #popupContent {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #popupContent .modal-header,
+        #popupContent .modal-body,
+        #popupContent .modal-footer {
+            padding: 20px;
+        }
+
+        #popupContent .modal-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Full Page Popup -->
+    <div id="popupOverlay">
+        <div id="popupContent">
+            <div class="modal-header">
+                <h5 class="modal-title">Buy Visa Guide Ebook</h5>
+                <button type="button" class="close" id="closePopup" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="detailsForm" action="/index" method="POST">
+                    <div class="form-group">
+                        <input id="email" class="form-control" placeholder="Email" name="email" type="email" value="{{ email }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input id="name" class="form-control" placeholder="Name" name="name" type="text" value="{{ name }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input id="phone" class="form-control" placeholder="Phone Number" name="phone" type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="agreeCheckbox"> I agree to proceed with Razorpay.
+                    </div>
+                    <button type="submit" id="proceedButton" class="btn btn-success btn-block" disabled>Proceed to Payment</button>
+                </form>
+
+                <!-- Razorpay Form (Initially Hidden) -->
+                {% if payment_order %}
+                <div id="razorpayContainer" class="mt-4">
+                    <form action="/success" id="razorpayForm" method="POST">
+                        <script 
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="rzp_test_7J7sVsldr989wI" <!-- Replace with your Razorpay key -->
+                            data-amount="50000"  <!-- Amount in paise (INR 500) -->
+                            data-currency="INR"
+                            data-order_id="{{ payment_order['id'] }}" <!-- Dynamically passed order ID -->
+                            data-buttontext="Pay with Razorpay"
+                            data-name="{{ user.name }}"
+                            data-description="Payment for {{ user.email }}"
+                            data-theme.color="#F37254">
+                        </script>
+                        <input type="hidden" name="hidden" value="hidden">
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        const popupOverlay = document.getElementById('popupOverlay');
+        const closePopupButton = document.getElementById('closePopup');
+        const proceedButton = document.getElementById('proceedButton');
+        const emailField = document.getElementById('email');
+        const nameField = document.getElementById('name');
+        const phoneField = document.getElementById('phone');
+        const agreeCheckbox = document.getElementById('agreeCheckbox');
+        const razorpayContainer = document.getElementById('razorpayContainer');
+
+        // Automatically open the popup when the page loads
+        window.onload = function() {
+            popupOverlay.style.display = 'flex';
+        };
+
+        // Close the popup
+        closePopupButton.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+        });
+
+        // Enable proceed button only when all fields are valid and checkbox is checked
+        function validateForm() {
+            const email = emailField.value.trim();
+            const name = nameField.value.trim();
+            const phone = phoneField.value.trim();
+            const isCheckboxChecked = agreeCheckbox.checked;
+
+            proceedButton.disabled = !(email && name && phone && isCheckboxChecked);
+        }
+
+        [emailField, nameField, phoneField, agreeCheckbox].forEach(element => {
+            element.addEventListener('input', validateForm);
+            element.addEventListener('change', validateForm);
+        });
+        function validatePhone() {
+        const phoneInput = document.getElementById('phone');
+        const phoneNumber = phoneInput.value.trim();
+        const phoneRegex = /^[0-9]{10}$/; // Assuming 10-digit Indian phone numbers
+
+            if (!phoneRegex.test(phoneNumber)) {
+                alert('Please enter a valid 10-digit phone number');
+                return false;
+            }
+            return true;
+        }
+        // Show Razorpay payment form in the popup
+        if (razorpayContainer) {
+            proceedButton.addEventListener('click', () => {
+                razorpayContainer.classList.remove('d-none');
+            });
+        }
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+        if (!validatePhone()) {
+            e.preventDefault();
+        }
+    });
+    </script>
+</body>
+</html>

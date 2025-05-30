@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Razorpay</title>
+    <!-- Include Razorpay's Checkout script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h1>Redirecting to Payment Gateway...</h1>
+    <h2>Welcome, {{ user.name }}</h2>
+    <p>Amount to Pay: ₹{{ user.amount }}</p>
+
+    <script>
+        var options = {
+            "key": "rzp_test_7J7sVsldr989wI", // Your Razorpay Key ID
+            "amount": "{{ payment.amount }}", // Amount in paise
+            "currency": "INR",
+            "name": "Payment for {{ user.name }}",
+            "description": "Payment for order",
+            "image": "https://your-logo-url.com/logo.png", // Optional: Your logo
+            "order_id": "{{ payment.order_id }}", // Razorpay order ID
+            "handler": function (response) {
+                // Handle success response
+                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                window.location.href = "{{ url_for('success') }}"; // Redirect to success page
+            },
+            "prefill": {
+                "email": "{{ user.email }}",
+                "contact": "{{ user.phone }}"
+            },
+            "theme": {
+                "color": "#F37254" // Customize the button color
+            }
+        };
+
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    </script>
+</body>
+</html>

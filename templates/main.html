@@ -1,0 +1,2775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/static/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>SR Counselling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+font-family: 'Itim', cursive;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+background : white;
+        }
+
+ .navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+justify-content : center;
+    gap: 3rem;
+    margin-right : 350px;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition : transform 0.3s ease;
+}
+
+.navbar a:hover{
+ transform : scale(1.1);
+ }
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 0.5rem 1.5rem;
+    }
+
+    .navbar {
+        gap: 2rem;
+    }
+
+    .navbar a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0.5rem 1rem;
+        flex-wrap: wrap;
+        min-height: 60px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0.5rem;
+    }
+
+    .navbar {
+        gap: 1rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+}
+
+/* For very small screens - stack vertically */
+@media (max-width: 360px) {
+    .navbar-container {
+        flex-direction: column;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+}
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-right: 0;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+}
+
+.lang {
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a, .lang, #google_translate_element {
+        width: 100%;
+    }
+}
+
+#google_translate_element{
+  border: 2px solid #7e57c2;
+  border-radius: 5px;
+ display : none ;
+
+
+
+}
+
+body > .skiptranslate > iframe.skiptranslate,
+body > .goog-te-banner-frame {
+display : none ;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        gap: 1rem; /* Reduce gap between links */
+    }
+}
+
+
+        .hero {
+            margin-top: 40px;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            color: #6C0404;
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card {
+            display : flex;
+            flex-direction : horizontal;
+            text-align: center;
+            width: 100%;
+            gap: 6rem;
+            justify-content : center;
+        }
+
+       .service-card h3 {
+           margin-top : 20px ;
+           font-size : 2.8rem;
+         }
+
+        .service-image {
+            height : 100px;
+            width: 100px;
+
+
+        }
+
+
+        .homeimage{
+           width : 500px;
+           height : 300px;
+        }
+
+
+        .tagimage{
+           width : 700px;
+           height : 400px;
+        }
+
+
+        .outer-box{
+
+           margin-top : 40px;
+
+          display : flex;
+          width : 100%;
+          flex-direction : row;
+          justify-content : space-between;
+
+        }
+
+        .partone{
+          display : flex;
+          flex-direction : column;
+          margin-right : 30px;
+          margin-left : 10%;
+        }
+
+
+
+
+        .parttwo{
+          display : flex;
+          flex-direction : row;
+          margin-right : 70px;
+          margin-left : 20px;
+          justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+
+        .cta-button {
+            background: #6C0404;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            margin : 2rem auto;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background: #8a0505;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+<!--        .price-tag {-->
+<!--            background: black;-->
+<!--            color: white;-->
+<!--            padding: 0.8rem 2rem;-->
+<!--            border-radius: 4px;-->
+<!--            display: inline-block;-->
+<!--            margin-top: 2rem;-->
+<!--            font-size: 1.2rem;-->
+<!--        }-->
+
+                .banner-container {
+            position: relative;
+            width: 500px;
+            height: 350px;
+            marign : 0;
+        }
+
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-red {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            transform: rotate(-15deg);
+            z-index: 1;
+        }
+
+        .card-blue {
+            background: linear-gradient(135deg, #4169E1 0%, #6495ED 100%);
+            transform: rotate(15deg);
+            z-index: 2;
+        }
+
+        .card-black {
+            background: #1a1a1a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 3;
+            transform: rotate(-2deg);
+        }
+
+        .special-price-text {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .price-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .rupee-symbol {
+            font-size: 3rem;
+        }
+
+
+h2 {
+    display: inline-block;
+    margin: 10px;
+    font-family: serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+        .procedure {
+            text-align: center;
+            padding: 1rem 2rem;
+            background: white;
+        }
+
+        .procedure h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+
+        }
+
+
+
+        .procedure-title-above, .procedure-title-below, .steps-below{
+            background : black;
+            height : 3px;
+        }
+
+
+
+<!--        .steps{-->
+<!--           position : relative;-->
+<!--           margin : 0 auto;-->
+<!--           margin-top : 40px;-->
+<!--           margin-bottom : 40px;-->
+<!--           width : 70%;-->
+<!--           height : 90%;-->
+<!--           transition: transform 0.3s ease;-->
+
+<!--        }-->
+
+
+<!--        .step {-->
+<!--            text-align: center;-->
+<!--            width: 250px;-->
+<!--            position: relative;-->
+<!--            z-index: 1;-->
+<!--            background: #fff;-->
+<!--            padding: 2rem;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .step-icon {-->
+<!--            width: 60px;-->
+<!--            height: 60px;-->
+<!--            background: #6C0404;-->
+<!--            border-radius: 50%;-->
+<!--            margin: 0 auto 2rem;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: center;-->
+<!--            color: white;-->
+<!--            font-size: 1.5rem;-->
+<!--            font-weight: bold;-->
+<!--            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);-->
+<!--        }-->
+
+.steps-text{
+justify-content : center ;
+margin-top : 30px;
+font-size : 2rem;}
+
+.steps-container {
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   width: 100%;
+   margin: 0 auto;
+   padding: 60px 20px;
+}
+
+/* Connecting Lines */
+.connecting-line {
+   position: absolute;
+   height: 5px;
+   top: 40%;
+   transform: translateY(-50%);
+   z-index: 1;
+}
+
+.line1 {
+   left: 19%;
+   width: 27%;
+   background-color: #5bc0de;
+}
+
+.line2 {
+   right: 18%;
+   width: 27%;
+   background-color: #f0ad4e;
+}
+
+/* Step Container */
+.step {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height : 90%;
+   width : 70;
+<!--   max-width: 200px;-->
+   position: relative;
+   z-index: 2;
+   transition: transform 0.3s ease;
+}
+    .step:hover {
+            transform: scale(1.1);
+        }
+/* Step Headers */
+.step-header {
+   background-color: #2c3e50;
+   color: white;
+   padding: 8px 15px;
+   font-size: 2rem;
+   font-weight: bold;
+   margin-bottom: 20px;
+   border-radius: 0;
+}
+
+/* Step Circles */
+/* Step Circles */
+.step-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: -1;
+}
+
+
+/* Step Icons */
+.step-icon {
+ width: 80px;
+ height: 80px;
+margin-top: 15px;
+    object-fit: cover;
+   z-index : 2;
+}
+
+/* Step Content */
+.step-content {
+   text-align: center;
+}
+
+.step-title {
+   font-size: 2rem;
+   font-weight: bold;
+   color: #2c3e50;
+   margin-bottom: 10px;
+   padding-bottom: 5px;
+   border-bottom: 3px solid;
+}
+
+.step1 .step-title {
+   border-bottom-color: #4a6fa5;
+}
+
+.step2 .step-title {
+   border-bottom-color: #5bc0de;
+}
+
+.step3 .step-title {
+   border-bottom-color: #f0ad4e;
+}
+
+.step-description {
+   font-style: italic;
+   color: #555;
+   font-size: 1.5rem;
+   line-height: 1.4;
+   width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .steps-container {
+       flex-direction: column;
+       align-items: center;
+       gap: 40px;
+   }
+
+   .connecting-line {
+       display: none;
+   }
+
+   .step {
+       max-width: 100%;
+   }
+
+   .step-description {
+       max-width: 250px;
+   }
+}
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            width: 100%;
+            margin-top: 1rem;
+            margin-right: 4rem;
+            padding: 2rem;
+        }
+
+        .stat-card {
+            border: 1px solid black;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            color: #6C0404;
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            padding: 4rem 2rem;
+margin-right : 5rem;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+text-align: center;
+            position: relative;
+            display: flex;
+            justify-content : center;
+
+        }
+
+
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            width: 100%;
+            margin-left : 2rem;
+
+            margin-top : 20px;
+        }
+
+        .video-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+
+
+        .faq {
+            width: 100%;
+            margin: 0rem auto;
+            padding: 2rem;
+            justify-content : center;
+        }
+
+        .faq h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display : flex;
+
+            justify-content : center;
+            margin : 2px auto ;
+
+        }
+
+        .faq-item {
+            border: 1px solid #ddd;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 5px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-divider {
+            height: 1px;
+            background: #ddd;
+            display: none;
+        }
+        .faq-answer {
+            padding: 5px;
+            font-size: 1.3rem;
+            color: #555;
+            display: none;
+        }
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+        .faq-item.open .faq-divider {
+            display: block;
+        }
+
+
+.faq-question img.arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+
+.faq-item.open img.arrow {
+    transform: rotate(180deg);
+}
+
+#last-button{
+display : flex;
+justify-content : center;
+width : 40%;}
+
+        .about {
+            background: white;
+            padding: 0rem 2rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            position: relative;
+            display: inline-block;
+            font-size : 2.5rem;
+        }
+
+        .about p{
+           text-align : center ;
+           padding: 20px 80px;
+           font-size : 1.5rem;
+
+             }
+
+
+        .world-map {
+            width: 50%;
+            margin: 2rem auto;
+        }
+
+
+.footer {
+  background-color: #6C0404; /* Maroon color */
+  color: white;
+  padding: 20px 10px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+font-size : 1.3rem;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+max-width : 400px;
+  margin: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.separator {
+  width: 1px;
+  background-color: white;
+  height: 200px;
+  margin: 0 10px;
+
+}
+
+.footer-links, .footer-terms {
+  min-width: 150px;
+  margin: 0px;
+display : flex;
+  justify-content : center;
+flex-direction : column;
+
+}
+
+.footer-links ul, .footer-terms ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li, .footer-terms ul li {
+  margin: 5px 0;
+}
+
+.footer-links ul li a, .footer-terms ul li a {
+  color: white;
+  text-decoration: none;
+  display : inline-block;
+  transition : transform 0.3s ease;
+}
+
+.footer-links ul li a:hover, .footer-terms ul li a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+
+.access{
+  font-size : 2rem;
+
+
+}
+
+
+        /* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+.hero h1{
+ font-size : 2rem;
+ }
+ .hero h3{
+ font-size : 2rem;
+ }
+    .service-card {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .service-image{
+    height : 50px;
+    width : 50px;}
+
+    .outer-box {
+        flex-direction: column;
+        align-items: center;
+        justify-content : center;
+        gap: 2rem;
+    }
+
+    .partone, .parttwo {
+        margin: 0;
+        width: 60%;
+              align-items: center;
+        justify-content : center;
+    }
+
+.homeimage{
+height : 200px;
+width : 200px;
+}
+
+    .banner-container {
+        width: 200px;
+        height: 200px;
+    }
+    .special-price-text, .price-text, .rupee-symbol{
+    font-size : 1.8rem;}
+    .cta-button{
+    font-size : 1.5rem;}
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    .hero h1 {
+    margin-top : 30px;
+        font-size: 2.8rem;
+    }
+
+    .service-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .cta-button {
+        font-size: 1.4rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .special-price-text, .price-text, .rupee-symbol{
+    font-size : 1.4rem;}
+.parttwo {
+        margin: 0;
+        width: 60%;
+        height : 20%;
+        align-items: center;
+        justify-content : center;
+    }
+        .banner-container {
+        width: 300px;
+        height: 300px;
+    }
+    .card {
+        height: 280px;
+    }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .service-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tagimage {
+        width: 100%;
+    }
+
+    .special-price-text {
+        font-size: 1.5rem;
+    }
+
+    .price-text {
+        font-size: 2rem;
+    }
+
+    .rupee-symbol {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        height: 230px;
+    }
+}
+
+        /* Tablets (≤ 1024px) — switch to 2 columns */
+@media (max-width: 1024px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin-right: 2rem;
+    }
+}
+
+/* Mobile (≤ 768px) — switch to 1 column */
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        margin-right: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Very Small Devices (≤ 480px) — tighter spacing */
+@media (max-width: 480px) {
+    .stats {
+        gap: 1rem;
+        padding: 0.8rem;
+        margin-right: 0;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.3rem;
+    }
+}
+/* Tablet (≤ 1024px) — 2 columns */
+@media (max-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-left: 1rem;
+    }
+
+    .testimonials {
+        padding: 3rem 1.5rem;
+        margin-right: 2rem;
+    }
+
+    .video-thumbnail {
+        height: 180px;
+    }
+}
+
+/* Mobile (≤ 768px) — 1 column */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        gap: 1.5rem;
+    }
+
+    .testimonials {
+        padding: 2rem 1rem;
+        margin-right: 0;
+    }
+
+    .testimonials h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .video-thumbnail {
+        height: 160px;
+    }
+}
+
+/* Very small mobile (≤ 480px) */
+@media (max-width: 480px) {
+    .testimonials {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .video-thumbnail {
+        height: 140px;
+    }
+
+    .video-card {
+        padding: 1rem;
+    }
+
+    .testimonials h2 {
+        font-size: 1.7rem;
+    }
+}
+
+        /* Tablets and smaller (≤ 1024px) */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  .separator {
+    width: 80%;
+    height: 1px;
+    margin: 20px 20px;
+     background-color: white;
+  }
+  .contact-info,
+  .footer-links,
+  .footer-terms {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .access {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 5px;
+    font-size: 1.1rem;
+  }
+
+  .footer-links ul li a,
+  .footer-terms ul li a {
+    font-size: 1.1rem;
+  }
+  .separator {
+    width: 80%;
+    height: 1px;
+    margin: 20px 20px;
+     background-color: white;
+  }
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .access {
+    font-size: 1.4rem;
+  }
+}
+
+/* Very small devices (≤ 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 5px;
+    font-size: 1rem;
+  }
+  .separator {
+    width: 80%;
+    height: 1px;
+    margin: 20px 20px;
+     background-color: white;
+  }
+  .access {
+    font-size: 1.2rem;
+  }
+
+  .contact-info img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+
+  .social-icons a {
+    margin: 0 3px;
+  }
+}
+
+    </style>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,bn,te,ml,gu,kn,mr',
+            }, 'google_translate_element');
+        }
+    </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  });
+</script>
+
+
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</head>
+<body>
+
+<div class="navbar-container">
+  <img src="/static/images/logo.png" alt="SR Logo" class="logo">
+
+      <!-- Hamburger Button -->
+  <button class="hamburger" id="hamburger">&#9776;</button>
+
+  <nav class="navbar" id="navbar">
+    <a href="#home">Home</a>
+    <a href="#procedure">Procedure</a>
+    <a href="#faqs">FAQs</a>
+    <a href="#ebook">E-Book</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact Us</a>
+
+    <!-- Language selection dropdown -->
+    <div class="lang">
+      <select id="languageSelect" disabled>
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+        <option value="bn">Bengali</option>
+        <option value="te">Telugu</option>
+        <option value="ml">Malayalam</option>
+        <option value="gu">Gujarati</option>
+        <option value="kn">Kannada</option>
+        <option value="mr">Marathi</option>
+      </select>
+    </div>
+
+  <div id="google_translate_element"></div>
+
+  </nav>
+</div>
+
+    <section id="home" class="hero">
+        <h1>Your dream destination awaits!</h1>
+
+            <div class="service-card">
+
+                <h3>Tourist visa assistance</h3>
+
+<img src="/static/images/visa.png" alt="visa" class="service-image">
+
+    <h3>Student visa assistance</h3>
+            </div>
+
+      <div class="outer-box">
+
+       <div class="partone">
+          <img src="/static/images/new.png" alt="image" class="homeimage">
+           <!--<a href="/index" class="cta-button">GET YOUR eBOOK NOW!!!</a>-->
+           <a href="{{ url_for('check_ebook_access') }}" class="cta-button">GET YOUR eBOOK NOW!!!</a>
+
+       </div>
+
+
+       <div class="parttwo">
+<!--          <img src="/static/images/new_tag.png" alt="image" class="tagimage">-->
+           <div class="banner-container">
+        <div class="card card-red"></div>
+        <div class="card card-blue"></div>
+        <div class="card card-black">
+            <div class="special-price-text">SPECIAL PRICE</div>
+            <div class="price-text">
+                <span class="rupee-symbol">Rs</span> 199 /-
+            </div>
+        </div>
+    </div>
+       </div>
+
+
+       </div>
+
+
+    </section>
+
+    <section id="procedure" class="procedure">
+       <div class="procedure-title-above"></div>
+          <h2>What's The Procedure?</h2>
+       <div class="procedure-title-below"></div>
+
+<!--       <img src="/static/images/steps.png" alt="steps" class="steps">-->
+        <div class="steps-container">
+            <!-- Connecting Lines -->
+            <div class="connecting-line line1"></div>
+            <div class="connecting-line line2"></div>
+
+            <!-- Step 1 -->
+            <div class="step step1">
+                <div class="step-header">STEP 1</div>
+                <div class="step-circle">
+                    <img src="/static/images/hands.png" alt="Handshake" class="step-icon">
+                </div>
+                <div class="step-content">
+                    <div class="step-title">Initial Consultation</div>
+                    <div class="step-description">
+                        Assess your goals and determine visa eligibility.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step step2">
+                <div class="step-header">STEP 2</div>
+                <div class="step-circle">
+                    <img src="/static/images/docs.png" alt="Documents" class="step-icon">
+                </div>
+                <div class="step-content">
+                    <div class="step-title">Application Preparation</div>
+                    <div class="step-description">
+                        Collect and organize documents, then submit your application.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step step3">
+                <div class="step-header">STEP 3</div>
+                <div class="step-circle">
+                    <img src="/static/images/visa_new.png" alt="Passport" class="step-icon">
+                </div>
+                <div class="step-content">
+                    <div class="step-title">Visa Interview & Support</div>
+                    <div class="step-description">
+                        Receive training and guidance to ensure approval.
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="steps-below"></div>
+       <div class="steps-text">
+            <h3>Turn Your Dreams into Reality with Expert Visa Guidance.</h3>
+           <h3> No More Guesswork. No More Stress.</h3>
+       </div>
+
+       <a href="/index" class="cta-button">BUY NOW</a>
+
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <img src="/static/images/yoe.png" alt="yoe" class="stat-image">
+            <h3>13+</h3>
+            <p>Years of experience</p>
+        </div>
+        <div class="stat-card">
+            <img src="/static/images/99.png" alt="99" class="stat-image">
+            <h3>99%</h3>
+            <p>Students come to us through reference</p>
+        </div>
+        <div class="stat-card">
+            <img src="/static/images/98.png" alt="98" class="stat-image">
+            <h3>98%</h3>
+            <p>Visa Success Rate</p>
+        </div>
+        <div class="stat-card">
+            <img src="/static/images/95.png" alt="95" class="stat-image">
+            <h3>95%</h3>
+            <p>Happy Students</p>
+        </div>
+        <div class="stat-card">
+            <img src="/static/images/90.png" alt="90" class="stat-image">
+            <h3>90%</h3>
+            <p>Students find jobs within 6 months post their studies</p>
+        </div>
+        <div class="stat-card">
+            <img src="/static/images/81.png" alt="81" class="stat-image">
+            <h3>81%</h3>
+            <p>Appreciate our insights in profile building & mentoring them to present it well to Universities through documentation</p>
+        </div>
+        <div class="stat-card">
+            <img src="/static/images/72.png" alt="72" class="stat-image">
+            <h3>72%</h3>
+            <p>Thank us for session on assistanships and internships</p>
+        </div>
+        <div class="stat-card">
+            <img src="/static/images/63.png" alt="63" class="stat-image">
+            <h3>63%</h3>
+            <p>Visit us after years to ‘Thank’ again, sip coffee and disccuss new goals</p>
+        </div>
+    </section>
+
+    <section class="testimonials">
+       <div class="procedure-title-above"></div>
+          <h2>Testimonials</h2>
+       <div class="procedure-title-below"></div>
+<h3 class="testimonials-heading" style="margin-top : 20px; font-size : 1.5rem; text-decoration : underline;">Tourist Voices: Their Visa Success Stories</h3>
+
+        <div class="video-grid">
+    <div class="video-card">
+        <div class="video-wrapper">
+            <video class="video-thumbnail" poster="/static/images/thumbnail.png" muted>
+                <source src="/static/videos/t1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3>Overview of payments</h3>
+    </div>
+
+    <div class="video-card">
+        <div class="video-wrapper">
+            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>
+                <source src="/static/videos/t1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3>Overview of payments</h3>
+    </div>
+
+    <div class="video-card">
+        <div class="video-wrapper">
+            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>
+                <source src="/static/videos/t1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3>Overview of payments</h3>
+    </div>
+
+</div>
+
+<h3 class="testimonials-heading" style="margin-top : 20px; font-size : 1.5rem; text-decoration : underline;">Student Success Stories: In Their Own Words</h3>
+
+<div class="video-grid">
+    <div class="video-card">
+        <div class="video-wrapper">
+            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>
+                <source src="/static/videos/t1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3>Overview of payments</h3>
+    </div>
+
+    <div class="video-card">
+        <div class="video-wrapper">
+            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>
+                <source src="/static/videos/t1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3>Overview of payments</h3>
+    </div>
+
+    <div class="video-card">
+        <div class="video-wrapper">
+            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>
+                <source src="/static/videos/t1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3>Overview of payments</h3>
+    </div>
+        </div>
+    </section>
+
+    <section id="faqs" class="faq">
+       <div class="procedure-title-above"></div>
+          <h2 class="procedure-title">Frequently Asked Questions</h2>
+       <div class="procedure-title-below"></div>
+       <div class="faq-item">
+    <div class="faq-question">
+        What does this eBook include?
+        <img class="arrow" src="/static/images/down-arrow.png" alt="Down arrow"> <!-- Default down arrow -->
+    </div>
+    <div class="faq-divider"></div>
+    <div class="faq-answer">
+        It’s a step-by-step guide with expert tips, checklists, and resources to simplify the visa application process and avoid mistakes.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        What does this eBook include?
+        <img class="arrow" src="/static/images/down-arrow.png" alt="Down arrow"> <!-- Default down arrow -->
+    </div>
+    <div class="faq-divider"></div>
+    <div class="faq-answer">
+        Content goes here.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        What does this eBook include?
+        <img class="arrow" src="/static/images/down-arrow.png" alt="Down arrow"> <!-- Default down arrow -->
+    </div>
+    <div class="faq-divider"></div>
+    <div class="faq-answer">
+        Content goes here.
+    </div>
+</div>
+
+          <a href="/index" class="cta-button" id="last-button">Grab your copy instantly!</a>
+
+
+
+    </section>
+
+
+    <section id="about" class="about">
+       <div class="procedure-title-above"></div>
+          <h2 class="procedure-title">About Us</h2>
+       <div class="procedure-title-below"></div>
+        <p>At SR Counselling, we are a trusted visa counseling firm dedicated to making global aspirations a reality. With years of expertise in student and tourist visa assistance, we provide personalized guidance to simplify complex procedures and ensure success.</p>
+        <img src="/static/images/map.png" alt="World Map" class="world-map">
+    </section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="contact-info">
+      <p><img src="/static/images/phone.png" alt="Phone"> +91-9820545774 | +91-9820545774</p>
+      <p><img src="/static/images/mail.png" alt="Email"> nshah@srcounsellingind.com</p>
+      <p><img src="/static/images/location.png" alt="Location"> 523, Zest Business Spaces, Next to Doshi Nursing Home, M.G Road, Ghatkopar (E), Mumbai - 400077</p>
+    </div>
+    <div class="separator"></div> <!-- Separator Line -->
+    <div class="footer-links">
+      <ul>
+        <li><a href="#procedure">Procedure</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#ebook">eBook</a></li>
+      </ul>
+    </div>
+    <div class="separator"></div> <!-- Separator Line -->
+    <div class="footer-terms">
+      <ul>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#"><img src="/static/images/insta.png" alt="Instagram"></a>
+        <a href="#"><img src="/static/images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="/static/images/linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="/static/images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="/static/images/youtube.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--<section id="ebook" class="procedure">-->
+<!--    <h2>E-Book Access</h2>-->
+<!--    <div class="access text-center">-->
+<!--        {% if session.get('paid_user') %}-->
+<!--            <div class="card p-4">-->
+<!--                <h3>Your Visa Guide E-Book</h3>-->
+<!--                <p>Thank you for your purchase! You can now access your comprehensive visa guide.</p>-->
+<!--                <a href="/success" class="cta-button mt-3">Get E-Book</a>-->
+<!--            </div>-->
+<!--        {% else %}-->
+<!--            <div class="card p-4">-->
+<!--                <h3>Premium Visa Guide</h3>-->
+<!--                <p>Purchase our e-book to access the complete visa application guide</p>-->
+<!--                <a href="/index" class="cta-button">Purchase Now</a>-->
+<!--            </div>-->
+<!--        {% endif %}-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<script>
+//        const video = document.getElementById('videoPlayer');
+          const videos = document.querySelectorAll('.video-thumbnail');
+          videos.forEach(video => {
+        // Play the video when hovered
+        video.addEventListener('mouseenter', function() {
+            video.play();
+        });
+
+        // Pause and reset the video when hover ends
+        video.addEventListener('mouseleave', function() {
+            video.pause();
+            video.currentTime = 0; // Reset to the beginning
+        });
+    });
+
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const arrow = question.querySelector('.arrow');
+        faqItem.classList.toggle('open');
+        // Change arrow image based on open state
+        arrow.src = faqItem.classList.contains('open') ? '/static/images/up-arrow.png' : '/static/images/down-arrow.png'; // Update with your image paths
+    });
+});
+// First, modify the HTML for the language selector
+const languageSelect = document.getElementById('languageSelect');
+const googleTranslateElement = document.getElementById('google_translate_element');
+
+// Store the original language names
+const languageNames = {
+    'en': 'English',
+    'hi': 'Hindi',
+    'ta': 'Tamil',
+    'bn': 'Bengali',
+    'te': 'Telugu',
+    'ml': 'Malayalam',
+    'gu': 'Gujarati',
+    'kn': 'Kannada',
+    'mr': 'Marathi'
+};
+
+// Initialize Google Translate widget
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,ta,bn,te,ml,gu,kn,mr',
+        autoDisplay: false
+    }, 'google_translate_element');
+
+    // Enable the language selection dropdown
+    languageSelect.disabled = false;
+
+    // Add mutation observer to maintain correct language names
+    const observer = new MutationObserver(() => {
+        const options = languageSelect.options;
+        for (let i = 0; i < options.length; i++) {
+            const langCode = options[i].value;
+            if (languageNames[langCode] && options[i].text !== languageNames[langCode]) {
+                options[i].text = languageNames[langCode];
+            }
+        }
+    });
+
+    observer.observe(languageSelect, {
+        childList: true,
+        subtree: true,
+        characterData: true
+    });
+}
+
+// Handle language change
+function handleLanguageChange(event) {
+    const selectedLanguage = event.target.value;
+
+    try {
+        if (window.google && window.google.translate) {
+            const googleCombo = document.querySelector('.goog-te-combo');
+            if (googleCombo) {
+                // Update Google Translate
+                googleCombo.value = selectedLanguage;
+                googleCombo.dispatchEvent(new Event('change'));
+
+                // Ensure correct language name is displayed
+                const selectedOption = languageSelect.options[languageSelect.selectedIndex];
+                if (languageNames[selectedLanguage]) {
+                    selectedOption.text = languageNames[selectedLanguage];
+                }
+            }
+        }
+    } catch (error) {
+        console.error('Error changing language:', error);
+    }
+}
+
+// Add event listener for language changes
+languageSelect.addEventListener('change', handleLanguageChange);
+
+// Load Google Translate script
+window.onload = function() {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(script);
+};
+    </script>
+
+
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="icon" href="/static/images/logo.png" type="image/png">-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">-->
+<!--    <title>SR Counselling</title>-->
+<!--    <style>-->
+<!--        * {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--            scroll-behavior: smooth;-->
+<!--            font-family: 'Itim', cursive;-->
+<!--        }-->
+
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            line-height: 1.6;-->
+<!--            background: white;-->
+<!--        }-->
+
+<!--        .navbar-container {-->
+<!--            position: fixed;-->
+<!--            top: 0;-->
+<!--            width: 100%;-->
+<!--            background: white;-->
+<!--            padding: 0.5rem 2rem;-->
+<!--            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);-->
+<!--            z-index: 1000;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: space-between;-->
+<!--        }-->
+
+<!--        .logo {-->
+<!--            width: 50px;-->
+<!--            height: 50px;-->
+<!--        }-->
+
+<!--        .navbar {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: center;-->
+<!--            gap: 3rem;-->
+<!--            margin-right: 350px;-->
+<!--        }-->
+
+<!--        .navbar a {-->
+<!--            color: #333;-->
+<!--            text-decoration: none;-->
+<!--            font-size: 1.2rem;-->
+<!--            font-weight: 500;-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .navbar a:hover {-->
+<!--            transform: scale(1.1);-->
+<!--        }-->
+
+<!--        #google_translate_element {-->
+<!--            border: 2px solid #7e57c2;-->
+<!--            border-radius: 5px;-->
+<!--            display: none;-->
+<!--        }-->
+
+<!--        body > .skiptranslate > iframe.skiptranslate,-->
+<!--        body > .goog-te-banner-frame {-->
+<!--            display: none;-->
+<!--        }-->
+
+<!--        @media (max-width: 768px) {-->
+<!--            .navbar-container {-->
+<!--                flex-direction: column;-->
+<!--                align-items: center;-->
+<!--            }-->
+
+<!--            .navbar {-->
+<!--                gap: 1rem; /* Reduce gap between links */-->
+<!--            }-->
+<!--        }-->
+
+<!--        /* Updated Hero Section Styles */-->
+<!--        .hero {-->
+<!--            margin-top: 80px;-->
+<!--            text-align: center;-->
+<!--            padding: 2rem;-->
+<!--        }-->
+
+<!--        .hero h1 {-->
+<!--            color: #800000;-->
+<!--            font-size: 2.5rem;-->
+<!--            margin-bottom: 1.5rem;-->
+<!--            max-width: 800px;-->
+<!--            margin-left: auto;-->
+<!--            margin-right: auto;-->
+<!--        }-->
+
+<!--        .visa-services {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--            gap: 2rem;-->
+<!--            margin: 2rem 0;-->
+<!--        }-->
+
+<!--        .visa-service {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 0.5rem;-->
+<!--        }-->
+
+<!--        .visa-icon {-->
+<!--            width: 40px;-->
+<!--            height: 40px;-->
+<!--        }-->
+
+<!--        .hero-content {-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--            max-width: 1200px;-->
+<!--            margin: 0 auto;-->
+<!--            gap: 2rem;-->
+<!--        }-->
+
+<!--        .hero-left {-->
+<!--            flex: 1;-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            align-items: flex-start;-->
+<!--        }-->
+
+<!--        .hero-right {-->
+<!--            flex: 1;-->
+<!--            position: relative;-->
+<!--        }-->
+
+<!--        .special-price {-->
+<!--            background: #000;-->
+<!--            color: white;-->
+<!--            padding: 1rem;-->
+<!--            position: absolute;-->
+<!--            top: 50%;-->
+<!--            left: 50%;-->
+<!--            transform: translate(-50%, -50%);-->
+<!--            z-index: 1;-->
+<!--            border-radius: 5px;-->
+<!--            text-align: center;-->
+<!--            width: 200px;-->
+<!--        }-->
+
+<!--        .special-price h3 {-->
+<!--            font-size: 1.2rem;-->
+<!--            margin-bottom: 0.5rem;-->
+<!--        }-->
+
+<!--        .special-price p {-->
+<!--            font-size: 1.5rem;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--        .star-rating {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            margin: 1rem 0;-->
+<!--            font-size: 1.5rem;-->
+<!--            color: #FFD700;-->
+<!--        }-->
+
+<!--        .ebook-benefits {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            margin: 2rem 0;-->
+<!--        }-->
+
+<!--        .benefits-left {-->
+<!--            flex: 1;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--        }-->
+
+<!--        .benefits-right {-->
+<!--            flex: 1;-->
+<!--        }-->
+
+<!--        .benefit-item {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 0.5rem;-->
+<!--            margin-bottom: 1rem;-->
+<!--            font-size: 1.2rem;-->
+<!--        }-->
+
+<!--        .benefit-check {-->
+<!--            color: #4CAF50;-->
+<!--            font-size: 1.5rem;-->
+<!--        }-->
+
+<!--        .divider {-->
+<!--            height: 2px;-->
+<!--            background: #ddd;-->
+<!--            margin: 2rem 0;-->
+<!--        }-->
+
+<!--        .applicants-helped {-->
+<!--            font-size: 1.2rem;-->
+<!--            margin: 1rem 0;-->
+<!--        }-->
+
+<!--        .cta-button {-->
+<!--            background: #800000;-->
+<!--            color: white;-->
+<!--            padding: 0.8rem 2rem;-->
+<!--            border: none;-->
+<!--            border-radius: 4px;-->
+<!--            font-size: 1.2rem;-->
+<!--            font-weight: bold;-->
+<!--            text-decoration: none;-->
+<!--            display: inline-block;-->
+<!--            margin-top: 1rem;-->
+<!--            transition: all 0.3s ease;-->
+<!--            text-transform: uppercase;-->
+<!--            letter-spacing: 1px;-->
+<!--            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        .cta-button:hover {-->
+<!--            background: #a00000;-->
+<!--            transform: translateY(-2px);-->
+<!--            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);-->
+<!--        }-->
+
+<!--        /* Rest of the existing styles */-->
+<!--        .service-card {-->
+<!--            display: flex;-->
+<!--            flex-direction: horizontal;-->
+<!--            text-align: center;-->
+<!--            width: 100%;-->
+<!--            gap: 6rem;-->
+<!--            justify-content: center;-->
+<!--        }-->
+
+<!--        .service-card h3 {-->
+<!--            margin-top: 20px;-->
+<!--            font-size: 2.8rem;-->
+<!--        }-->
+
+<!--        .service-image {-->
+<!--            height: 100px;-->
+<!--            width: 100px;-->
+<!--        }-->
+
+<!--        .homeimage {-->
+<!--            width: 400px;-->
+<!--            height: auto;-->
+<!--        }-->
+
+<!--        .tagimage {-->
+<!--            width: 500px;-->
+<!--            height: auto;-->
+<!--        }-->
+
+<!--        .procedure {-->
+<!--            text-align: center;-->
+<!--            padding: 1rem 2rem;-->
+<!--            background: white;-->
+<!--        }-->
+
+<!--        .procedure h2 {-->
+<!--            font-size: 2.5rem;-->
+<!--            position: relative;-->
+<!--            display: inline-block;-->
+<!--        }-->
+
+<!--        .procedure-title-above, .procedure-title-below, .steps-below {-->
+<!--            background: black;-->
+<!--            height: 3px;-->
+<!--        }-->
+
+<!--        .steps {-->
+<!--            position: relative;-->
+<!--            margin: 0 auto;-->
+<!--            margin-top: 40px;-->
+<!--            margin-bottom: 40px;-->
+<!--            width: 70%;-->
+<!--            height: 90%;-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .steps:hover {-->
+<!--            transform: scale(1.1);-->
+<!--        }-->
+
+<!--        .steps-text {-->
+<!--            justify-content: center;-->
+<!--            margin-top: 30px;-->
+<!--            font-size: 2rem;-->
+<!--        }-->
+
+<!--        .stats {-->
+<!--            display: grid;-->
+<!--            grid-template-columns: repeat(4, 1fr);-->
+<!--            gap: 2rem;-->
+<!--            width: 100%;-->
+<!--            margin-top: 1rem;-->
+<!--            margin-right: 4rem;-->
+<!--            padding: 2rem;-->
+<!--        }-->
+
+<!--        .stat-card {-->
+<!--            border: 1px solid black;-->
+<!--            padding: 2rem;-->
+<!--            text-align: center;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .stat-card:hover {-->
+<!--            transform: translateY(-5px);-->
+<!--        }-->
+
+<!--        .stat-card h3 {-->
+<!--            color: #6C0404;-->
+<!--            font-size: 1.9rem;-->
+<!--            margin-bottom: 1rem;-->
+<!--        }-->
+
+<!--        .testimonials {-->
+<!--            padding: 4rem 2rem;-->
+<!--            margin-right: 5rem;-->
+<!--        }-->
+
+<!--        .testimonials h2 {-->
+<!--            font-size: 2.5rem;-->
+<!--            text-align: center;-->
+<!--            position: relative;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--        }-->
+
+<!--        .video-grid {-->
+<!--            display: grid;-->
+<!--            grid-template-columns: repeat(3, 1fr);-->
+<!--            gap: 4rem;-->
+<!--            width: 100%;-->
+<!--            margin-left: 2rem;-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+
+<!--        .video-card {-->
+<!--            border: 1px solid #ddd;-->
+<!--            padding: 1.5rem;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .video-card:hover {-->
+<!--            transform: translateY(-5px);-->
+<!--        }-->
+
+<!--        .video-thumbnail {-->
+<!--            width: 100%;-->
+<!--            height: 200px;-->
+<!--            object-fit: cover;-->
+<!--            border-radius: 4px;-->
+<!--            margin-bottom: 1rem;-->
+<!--        }-->
+
+<!--        .faq {-->
+<!--            width: 100%;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 2rem;-->
+<!--            justify-content: center;-->
+<!--        }-->
+
+<!--        .faq h2 {-->
+<!--            font-size: 2.5rem;-->
+<!--            position: relative;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            margin: 2px auto;-->
+<!--        }-->
+
+<!--        .faq-item {-->
+<!--            border: 1px solid #ddd;-->
+<!--            margin: 1.5rem 0;-->
+<!--            padding: 1.5rem;-->
+<!--            border-radius: 8px;-->
+<!--            background: white;-->
+<!--            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .faq-item:hover {-->
+<!--            transform: translateY(-2px);-->
+<!--        }-->
+
+<!--        .faq-item {-->
+<!--            background: white;-->
+<!--            border: 1px solid #ddd;-->
+<!--            border-radius: 15px;-->
+<!--            margin-bottom: 10px;-->
+<!--            overflow: hidden;-->
+<!--        }-->
+
+<!--        .faq-question {-->
+<!--            padding: 5px;-->
+<!--            font-size: 1.3rem;-->
+<!--            font-weight: bold;-->
+<!--            cursor: pointer;-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--        }-->
+
+<!--        .faq-divider {-->
+<!--            height: 1px;-->
+<!--            background: #ddd;-->
+<!--            display: none;-->
+<!--        }-->
+
+<!--        .faq-answer {-->
+<!--            padding: 5px;-->
+<!--            font-size: 1.3rem;-->
+<!--            color: #555;-->
+<!--            display: none;-->
+<!--        }-->
+
+<!--        .faq-item.open .faq-answer {-->
+<!--            display: block;-->
+<!--        }-->
+
+<!--        .faq-item.open .faq-divider {-->
+<!--            display: block;-->
+<!--        }-->
+
+<!--        .faq-question img.arrow {-->
+<!--            width: 16px;-->
+<!--            height: 16px;-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .faq-item.open img.arrow {-->
+<!--            transform: rotate(180deg);-->
+<!--        }-->
+
+<!--        #last-button {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            width: 40%;-->
+<!--        }-->
+
+<!--        .about {-->
+<!--            background: white;-->
+<!--            padding: 0 2rem;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        .about h2 {-->
+<!--            position: relative;-->
+<!--            display: inline-block;-->
+<!--            font-size: 2.5rem;-->
+<!--        }-->
+
+<!--        .about p {-->
+<!--            text-align: center;-->
+<!--            padding: 20px 80px;-->
+<!--            font-size: 1.5rem;-->
+<!--        }-->
+
+<!--        .world-map {-->
+<!--            width: 50%;-->
+<!--            margin: 2rem auto;-->
+<!--        }-->
+
+<!--        .footer {-->
+<!--            background-color: #800000;-->
+<!--            color: white;-->
+<!--            padding: 20px 10px;-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
+
+<!--        .footer-container {-->
+<!--            display: flex;-->
+<!--            justify-content: space-around;-->
+<!--            flex-wrap: wrap;-->
+<!--            align-items: flex-start;-->
+<!--            font-size: 1.3rem;-->
+<!--        }-->
+
+<!--        .contact-info {-->
+<!--            flex: 1;-->
+<!--            min-width: 300px;-->
+<!--            max-width: 400px;-->
+<!--            margin: 10px;-->
+<!--        }-->
+
+<!--        .contact-info p {-->
+<!--            margin: 5px 0;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--        }-->
+
+<!--        .contact-info img {-->
+<!--            width: 20px;-->
+<!--            height: 20px;-->
+<!--            margin-right: 10px;-->
+<!--        }-->
+
+<!--        .separator {-->
+<!--            width: 1px;-->
+<!--            background-color: white;-->
+<!--            height: 200px;-->
+<!--            margin: 0 10px;-->
+<!--        }-->
+
+<!--        .footer-links, .footer-terms {-->
+<!--            min-width: 150px;-->
+<!--            margin: 0px;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            flex-direction: column;-->
+<!--        }-->
+
+<!--        .footer-links ul, .footer-terms ul {-->
+<!--            list-style: none;-->
+<!--            padding: 0;-->
+<!--        }-->
+
+<!--        .footer-links ul li, .footer-terms ul li {-->
+<!--            margin: 5px 0;-->
+<!--        }-->
+
+<!--        .footer-links ul li a, .footer-terms ul li a {-->
+<!--            color: white;-->
+<!--            text-decoration: none;-->
+<!--            display: inline-block;-->
+<!--            transition: transform 0.3s ease;-->
+<!--        }-->
+
+<!--        .footer-links ul li a:hover, .footer-terms ul li a:hover {-->
+<!--            transform: scale(1.2);-->
+<!--        }-->
+
+<!--        .social-icons {-->
+<!--            margin-top: 10px;-->
+<!--        }-->
+
+<!--        .social-icons a {-->
+<!--            display: inline-block;-->
+<!--            margin: 0 5px;-->
+<!--        }-->
+
+<!--        .social-icons img {-->
+<!--            width: 30px;-->
+<!--            height: 30px;-->
+<!--        }-->
+
+<!--        .access {-->
+<!--            font-size: 2rem;-->
+<!--        }-->
+<!--    </style>-->
+
+<!--    <script type="text/javascript">-->
+<!--        function googleTranslateElementInit() {-->
+<!--            new google.translate.TranslateElement({-->
+<!--                pageLanguage: 'en',-->
+<!--                includedLanguages: 'en,hi,ta,bn,te,ml,gu,kn,mr',-->
+<!--            }, 'google_translate_element');-->
+<!--        }-->
+<!--    </script>-->
+
+<!--    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="navbar-container">-->
+<!--  <img src="/static/images/logo.png" alt="SR Logo" class="logo">-->
+
+<!--  <nav class="navbar">-->
+<!--    <a href="#home">Home</a>-->
+<!--    <a href="#procedure">Procedure</a>-->
+<!--    <a href="#faqs">FAQs</a>-->
+<!--    <a href="#about">About Us</a>-->
+<!--    <a href="#contact">Contact Us</a>-->
+<!--    <a href="#ebooks">eBooks</a>-->
+
+<!--    &lt;!&ndash; Language selection dropdown &ndash;&gt;-->
+<!--    <div class="lang">-->
+<!--      <select id="languageSelect" disabled>-->
+<!--        <option value="en">English</option>-->
+<!--        <option value="hi">Hindi</option>-->
+<!--        <option value="ta">Tamil</option>-->
+<!--        <option value="bn">Bengali</option>-->
+<!--        <option value="te">Telugu</option>-->
+<!--        <option value="ml">Malayalam</option>-->
+<!--        <option value="gu">Gujarati</option>-->
+<!--        <option value="kn">Kannada</option>-->
+<!--        <option value="mr">Marathi</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    <div id="google_translate_element"></div>-->
+<!--  </nav>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Updated Hero Section &ndash;&gt;-->
+<!--<section id="home" class="hero">-->
+<!--    <h1>From Adventure to Education: Expert Support for Securing Your Tourist & Student Visas</h1>-->
+
+<!--    <div class="visa-services">-->
+<!--        <div class="visa-service">-->
+<!--            <span>Tourist visa assistance</span>-->
+<!--            <img src="/static/images/visa.png" alt="Tourist visa" class="visa-icon">-->
+<!--        </div>-->
+<!--        <div class="visa-service">-->
+<!--            <img src="/static/images/visa.png" alt="Student visa" class="visa-icon">-->
+<!--            <span>Student visa assistance</span>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="hero-content">-->
+<!--        <div class="hero-left">-->
+<!--            <img src="/static/images/new.png" alt="Visa application" class="homeimage">-->
+<!--            <a href="{{ url_for('check_ebook_access') }}" class="cta-button">GET YOUR eBOOK NOW!!!</a>-->
+<!--        </div>-->
+
+<!--        <div class="hero-right">-->
+<!--            <div class="special-price">-->
+<!--                <h3>SPECIAL PRICE</h3>-->
+<!--                <p>Rs 199 /-</p>-->
+<!--            </div>-->
+<!--            <img src="/static/images/new_tag.png" alt="Special offer" class="tagimage">-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="applicants-helped">-->
+<!--        <p>+10,000 applicants helped</p>-->
+<!--    </div>-->
+
+<!--    <div class="star-rating">-->
+<!--        <span>★</span>-->
+<!--        <span>★</span>-->
+<!--        <span>★</span>-->
+<!--        <span>★</span>-->
+<!--        <span>★</span>-->
+<!--    </div>-->
+
+<!--    <div class="divider"></div>-->
+
+<!--    <div class="ebook-benefits">-->
+<!--        <div class="benefits-left">-->
+<!--            <img src="/static/images/ebook-cover.png" alt="eBook Cover" style="width: 150px; height: auto;">-->
+<!--        </div>-->
+<!--        <div class="benefits-right">-->
+<!--            <div class="benefit-item">-->
+<!--                <span class="benefit-check">✓</span>-->
+<!--                <span>Avoid common mistakes</span>-->
+<!--            </div>-->
+<!--            <div class="benefit-item">-->
+<!--                <span class="benefit-check">✓</span>-->
+<!--                <span>Master your interview</span>-->
+<!--            </div>-->
+<!--            <div class="benefit-item">-->
+<!--                <span class="benefit-check">✓</span>-->
+<!--                <span>All-in-one checklist</span>-->
+<!--            </div>-->
+<!--            <div class="benefit-item">-->
+<!--                <span class="benefit-check">✓</span>-->
+<!--                <span>Spot and fix red flags</span>-->
+<!--            </div>-->
+<!--            <div class="benefit-item">-->
+<!--                <span class="benefit-check">✓</span>-->
+<!--                <span>Guaranteed approval</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<section id="procedure" class="procedure">-->
+<!--   <div class="procedure-title-above"></div>-->
+<!--      <h2>What's The Procedure?</h2>-->
+<!--   <div class="procedure-title-below"></div>-->
+
+<!--   <img src="/static/images/steps.png" alt="steps" class="steps">-->
+<!--   <div class="steps-below"></div>-->
+<!--   <div class="steps-text">-->
+<!--        <h3>Turn Your Dreams into Reality with Expert Visa Guidance.</h3>-->
+<!--       <h3> No More Guesswork. No More Stress.</h3>-->
+<!--   </div>-->
+
+<!--   <a href="/index" class="cta-button">BUY NOW</a>-->
+<!--</section>-->
+
+<!--<section class="stats">-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/yoe.png" alt="yoe" class="stat-image">-->
+<!--        <h3>13+</h3>-->
+<!--        <p>Years of experience</p>-->
+<!--    </div>-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/99.png" alt="99" class="stat-image">-->
+<!--        <h3>99%</h3>-->
+<!--        <p>Students come to us through reference</p>-->
+<!--    </div>-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/98.png" alt="98" class="stat-image">-->
+<!--        <h3>98%</h3>-->
+<!--        <p>Visa Success Rate</p>-->
+<!--    </div>-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/95.png" alt="95" class="stat-image">-->
+<!--        <h3>95%</h3>-->
+<!--        <p>Happy Students</p>-->
+<!--    </div>-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/90.png" alt="90" class="stat-image">-->
+<!--        <h3>90%</h3>-->
+<!--        <p>Students find jobs within 6 months post their studies</p>-->
+<!--    </div>-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/81.png" alt="81" class="stat-image">-->
+<!--        <h3>81%</h3>-->
+<!--        <p>Appreciate our insights in profile building & mentoring them to present it well to Universities through documentation</p>-->
+<!--    </div>-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/72.png" alt="72" class="stat-image">-->
+<!--        <h3>72%</h3>-->
+<!--        <p>Thank us for session on assistanships and internships</p>-->
+<!--    </div>-->
+<!--    <div class="stat-card">-->
+<!--        <img src="/static/images/63.png" alt="63" class="stat-image">-->
+<!--        <h3>63%</h3>-->
+<!--        <p>Visit us after years to 'Thank' again, sip coffee and disccuss new goals</p>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<section class="testimonials">-->
+<!--   <div class="procedure-title-above"></div>-->
+<!--      <h2>Testimonials</h2>-->
+<!--   <div class="procedure-title-below"></div>-->
+<!--<h3 class="testimonials-heading" style="margin-top: 20px; font-size: 1.5rem; text-decoration: underline;">Tourist Voices: Their Visa Success Stories</h3>-->
+
+<!--    <div class="video-grid">-->
+<!--    <div class="video-card">-->
+<!--        <div class="video-wrapper">-->
+<!--            <video class="video-thumbnail" poster="/static/images/thumbnail.png" muted>-->
+<!--                <source src="/static/videos/t1.mp4" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--        </div>-->
+<!--        <h3>Overview of payments</h3>-->
+<!--    </div>-->
+
+<!--    <div class="video-card">-->
+<!--        <div class="video-wrapper">-->
+<!--            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>-->
+<!--                <source src="/static/videos/t1.mp4" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--        </div>-->
+<!--        <h3>Overview of payments</h3>-->
+<!--    </div>-->
+
+<!--    <div class="video-card">-->
+<!--        <div class="video-wrapper">-->
+<!--            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>-->
+<!--                <source src="/static/videos/t1.mp4" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--        </div>-->
+<!--        <h3>Overview of payments</h3>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<h3 class="testimonials-heading" style="margin-top: 20px; font-size: 1.5rem; text-decoration: underline;">Student Success Stories: In Their Own Words</h3>-->
+
+<!--<div class="video-grid">-->
+<!--    <div class="video-card">-->
+<!--        <div class="video-wrapper">-->
+<!--            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>-->
+<!--                <source src="/static/videos/t1.mp4" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--        </div>-->
+<!--        <h3>Overview of payments</h3>-->
+<!--    </div>-->
+
+<!--    <div class="video-card">-->
+<!--        <div class="video-wrapper">-->
+<!--            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>-->
+<!--                <source src="/static/videos/t1.mp4" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--        </div>-->
+<!--        <h3>Overview of payments</h3>-->
+<!--    </div>-->
+
+<!--    <div class="video-card">-->
+<!--        <div class="video-wrapper">-->
+<!--            <video class="video-thumbnail"  poster="/static/images/thumbnail.png" muted>-->
+<!--                <source src="/static/videos/t1.mp4" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--        </div>-->
+<!--        <h3>Overview of payments</h3>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<section id="faqs" class="faq">-->
+<!--   <div class="procedure-title-above"></div>-->
+<!--      <h2 class="procedure-title">Frequently Asked Questions</h2>-->
+<!--   <div class="procedure-title-below"></div>-->
+<!--   <div class="faq-item">-->
+<!--    <div class="faq-question">-->
+<!--        What does this eBook include?-->
+<!--        <img class="arrow" src="/static/images/down-arrow.png" alt="Down arrow"> &lt;!&ndash; Default down arrow &ndash;&gt;-->
+<!--    </div>-->
+<!--    <div class="faq-divider"></div>-->
+<!--    <div class="faq-answer">-->
+<!--        It's a step-by-step guide with expert tips, checklists, and resources to simplify the visa application process and avoid mistakes.-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="faq-item">-->
+<!--    <div class="faq-question">-->
+<!--        What does this eBook include?-->
+<!--        <img class="arrow" src="/static/images/down-arrow.png" alt="Down arrow"> &lt;!&ndash; Default down arrow &ndash;&gt;-->
+<!--    </div>-->
+<!--    <div class="faq-divider"></div>-->
+<!--    <div class="faq-answer">-->
+<!--        Content goes here.-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="faq-item">-->
+<!--    <div class="faq-question">-->
+<!--        What does this eBook include?-->
+<!--        <img class="arrow" src="/static/images/down-arrow.png" alt="Down arrow"> &lt;!&ndash; Default down arrow &ndash;&gt;-->
+<!--    </div>-->
+<!--    <div class="faq-divider"></div>-->
+<!--    <div class="faq-answer">-->
+<!--        Content goes here.-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--      <a href="/index" class="cta-button" id="last-button">Grab your copy instantly!</a>-->
+<!--</section>-->
+
+<!--<section id="about" class="about">-->
+<!--   <div class="procedure-title-above"></div>-->
+<!--      <h2 class="procedure-title">About Us</h2>-->
+<!--   <div class="procedure-title-below"></div>-->
+<!--    <p>At SR Counselling, we are a trusted visa counseling firm dedicated to making global aspirations a reality. With years of expertise in student and tourist visa assistance, we provide personalized guidance to simplify complex procedures and ensure success.</p>-->
+<!--    <img src="/static/images/map.png" alt="World Map" class="world-map">-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Adding an E-Book Section as requested &ndash;&gt;-->
+<!--<section id="ebooks" class="procedure">-->
+<!--   <div class="procedure-title-above"></div>-->
+<!--      <h2>Our E-Book Resources</h2>-->
+<!--   <div class="procedure-title-below"></div>-->
+
+<!--   <div style="display: flex; justify-content: center; margin-top: 30px; gap: 40px;">-->
+<!--       <div style="text-align: center; border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 300px;">-->
+<!--           <img src="/static/images/ebook-cover.png" alt="Tourist Visa eBook" style="width: 200px; height: auto; margin-bottom: 15px;">-->
+<!--           <h3 style="margin-bottom: 10px;">Tourist Visa Guide</h3>-->
+<!--           <p style="margin-bottom: 20px;">Complete step-by-step guide to secure your tourist visa with confidence.</p>-->
+<!--           <span class="price-tag">₹199 only</span>-->
+<!--           <a href="/tourist-guide" class="cta-button" style="display: block; margin-top: 15px;">Get Now</a>-->
+<!--       </div>-->
+
+<!--       <div style="text-align: center; border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 300px;">-->
+<!--           <img src="/static/images/ebook-cover.png" alt="Student Visa eBook" style="width: 200px; height: auto; margin-bottom: 15px;">-->
+<!--           <h3 style="margin-bottom: 10px;">Student Visa Guide</h3>-->
+<!--           <p style="margin-bottom: 20px;">Expert guidance for students aiming to study abroad with visa success.</p>-->
+<!--           <span class="price-tag">₹199 only</span>-->
+<!--           <a href="/student-guide" class="cta-button" style="display: block; margin-top: 15px;">Get Now</a>-->
+<!--       </div>-->
+<!--   </div>-->
+
+<!--   <div style="margin-top: 40px; text-align: center;">-->
+<!--       <p style="font-size: 1.2rem; margin-bottom: 20px;">Get both guides at a special bundle price!</p>-->
+<!--       <a href="/bundle-offer" class="cta-button">Get Bundle Offer</a>-->
+<!--   </div>-->
+<!--</section>-->
+
+<!--<footer class="footer">-->
+<!--  <div class="footer-container">-->
+<!--    <div class="contact-info">-->
+<!--      <p><img src="/static/images/phone.png" alt="Phone"> +91-9820545774 | +91-9820545774</p>-->
+<!--      <p><img src="/static/images/mail.png" alt="Email"> nshah@srcounsellingind.com</p>-->
+<!--      <p><img src="/static/images/location.png" alt="Location"> 523, Zest Business Spaces, Next to Doshi Nursing Home, M.G Road, Ghatkopar (E), Mumbai - 400077</p>-->
+<!--    </div>-->
+<!--    <div class="separator"></div> &lt;!&ndash; Separator Line &ndash;&gt;-->
+<!--    <div class="footer-links">-->
+<!--      <ul>-->
+<!--        <li><a href="#procedure">Procedure</a></li>-->
+<!--        <li><a href="#faqs">FAQs</a></li>-->
+<!--        <li><a href="#about">About Us</a></li>-->
+<!--        <li><a href="#contact">Contact Us</a></li>-->
+<!--        <li><a href="#ebook">eBook</a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--    <div class="separator"></div> &lt;!&ndash; Separator Line &ndash;&gt;-->
+<!--    <div class="footer-terms">-->
+<!--      <ul>-->
+<!--        <li><a href="#">Terms and Conditions</a></li>-->
+<!--        <li><a href="#">Privacy Policy</a></li>-->
+<!--      </ul>-->
+<!--      <div class="social-icons">-->
+<!--        <a href="#"><img src="/static/images/insta.png" alt="Instagram"></a>-->
+<!--        <a href="#"><img src="/static/images/twitter.png" alt="Twitter"></a>-->
+<!--        <a href="#"><img src="/static/images/linkedin.png" alt="LinkedIn"></a>-->
+<!--        <a href="#"><img src="/static/images/facebook.png" alt="Facebook"></a>-->
+<!--        <a href="#"><img src="/static/images/youtube.png" alt="YouTube"></a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</footer>-->
+
+<!--&lt;!&ndash;<section id="ebook" class="procedure">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2>E-Book Access</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="access text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;        {% if session.get('paid_user') %}&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="card p-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h3>Your Visa Guide E-Book</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Thank you for your purchase! You can now access your comprehensive visa guide.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <a href="/success" class="cta-button mt-3">Get E-Book</a>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        {% else %}&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="card p-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h3>Premium Visa Guide</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Purchase our e-book to access the complete visa application guide</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <a href="/index" class="cta-button">Purchase Now</a>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</section>&ndash;&gt;-->
+
+
+<!--<script>-->
+<!--//        const video = document.getElementById('videoPlayer');-->
+<!--          const videos = document.querySelectorAll('.video-thumbnail');-->
+<!--          videos.forEach(video => {-->
+<!--        // Play the video when hovered-->
+<!--        video.addEventListener('mouseenter', function() {-->
+<!--            video.play();-->
+<!--        });-->
+
+<!--        // Pause and reset the video when hover ends-->
+<!--        video.addEventListener('mouseleave', function() {-->
+<!--            video.pause();-->
+<!--            video.currentTime = 0; // Reset to the beginning-->
+<!--        });-->
+<!--    });-->
+
+<!--document.querySelectorAll('.faq-question').forEach(question => {-->
+<!--    question.addEventListener('click', () => {-->
+<!--        const faqItem = question.parentElement;-->
+<!--        const arrow = question.querySelector('.arrow');-->
+<!--        faqItem.classList.toggle('open');-->
+<!--        // Change arrow image based on open state-->
+<!--        arrow.src = faqItem.classList.contains('open') ? '/static/images/up-arrow.png' : '/static/images/down-arrow.png'; // Update with your image paths-->
+<!--    });-->
+<!--});-->
+<!--// First, modify the HTML for the language selector-->
+<!--const languageSelect = document.getElementById('languageSelect');-->
+<!--const googleTranslateElement = document.getElementById('google_translate_element');-->
+
+<!--// Store the original language names-->
+<!--const languageNames = {-->
+<!--    'en': 'English',-->
+<!--    'hi': 'Hindi',-->
+<!--    'ta': 'Tamil',-->
+<!--    'bn': 'Bengali',-->
+<!--    'te': 'Telugu',-->
+<!--    'ml': 'Malayalam',-->
+<!--    'gu': 'Gujarati',-->
+<!--    'kn': 'Kannada',-->
+<!--    'mr': 'Marathi'-->
+<!--};-->
+
+<!--// Initialize Google Translate widget-->
+<!--function googleTranslateElementInit() {-->
+<!--    new google.translate.TranslateElement({-->
+<!--        pageLanguage: 'en',-->
+<!--        includedLanguages: 'en,hi,ta,bn,te,ml,gu,kn,mr',-->
+<!--        autoDisplay: false-->
+<!--    }, 'google_translate_element');-->
+
+<!--    // Enable the language selection dropdown-->
+<!--    languageSelect.disabled = false;-->
+
+<!--    // Add mutation observer to maintain correct language names-->
+<!--    const observer = new MutationObserver(() => {-->
+<!--        const options = languageSelect.options;-->
+<!--        for (let i = 0; i < options.length; i++) {-->
+<!--            const langCode = options[i].value;-->
+<!--            if (languageNames[langCode] && options[i].text !== languageNames[langCode]) {-->
+<!--                options[i].text = languageNames[langCode];-->
+<!--            }-->
+<!--        }-->
+<!--    });-->
+
+<!--    observer.observe(languageSelect, {-->
+<!--        childList: true,-->
+<!--        subtree: true,-->
+<!--        characterData: true-->
+<!--    });-->
+<!--}-->
+
+<!--// Handle language change-->
+<!--function handleLanguageChange(event) {-->
+<!--    const selectedLanguage = event.target.value;-->
+
+<!--    try {-->
+<!--        if (window.google && window.google.translate) {-->
+<!--            const googleCombo = document.querySelector('.goog-te-combo');-->
+<!--            if (googleCombo) {-->
+<!--                // Update Google Translate-->
+<!--                googleCombo.value = selectedLanguage;-->
+<!--                googleCombo.dispatchEvent(new Event('change'));-->
+
+<!--                // Ensure correct language name is displayed-->
+<!--                const selectedOption = languageSelect.options[languageSelect.selectedIndex];-->
+<!--                if (languageNames[selectedLanguage]) {-->
+<!--                    selectedOption.text = languageNames[selectedLanguage];-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--    } catch (error) {-->
+<!--        console.error('Error changing language:', error);-->
+<!--    }-->
+<!--}-->
+
+<!--// Add event listener for language changes-->
+<!--languageSelect.addEventListener('change', handleLanguageChange);-->
+
+<!--// Load Google Translate script-->
+<!--window.onload = function() {-->
+<!--    const script = document.createElement('script');-->
+<!--    script.type = 'text/javascript';-->
+<!--    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';-->
+<!--    document.body.appendChild(script);-->
+<!--};-->
+<!--    </script>-->
+
+
+<!--</body>-->
+<!--</html>-->

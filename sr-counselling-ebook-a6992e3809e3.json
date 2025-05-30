@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sr-counselling-ebook",
+  "private_key_id": "a6992e3809e3cddc86b67463abab3c524fe22518",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCplxOxJlh4Mx3V\nuGwWSfbUEJg5FGFwdlWpwFL+67kmnCqwDDWySabxBGTXNTmeAd14Ug7KfkbAmDqR\nG2GrCtgZmsIlT4zZV4irmL4UFv9nbCHZuL3cenx2iM7cgFpFCam9iv5RVQ/VVf+e\nfmzIM5jZ9IFfCEdNSzjpuPz2ll4eMBqH0aT7cH6Io2M02Bxcr8JzC6xdW8PWKZM+\nPM06vEM5G6H1gCsfxDzs+1MmdUiJwoEKC1ZLFIHgJzIu5hoOx5QCxDiS0pmshJJy\nlf0vhWEzoIVRzLZMLvwRsIE79mBbCtw2YpsyvgDn7u4Gd40kEVTduLVUy7vCDUDu\nIkC9oN8ZAgMBAAECggEAA1USYDv8Z4o7lxg7WXnFFZgo4ZA+tObCWqZKizNHDVTq\nutBWmsT7OIepUpg7ZFktiKB2JXDzQ3QKTJEg62s4YVJq57BHOHsRlquW6o6kIJxd\nkulgI62tdefMxsTn4SzmLrEFO8Rj3gGFVxAtY4auBXRaOWuQeRqWCPOnVtIQEeBA\nX4nGslpszK0P7AXTYXboex7336/jOFGUgZVOhukCCYH2JJGzN98XZI9wtoTbQGhz\nA5yIGUfBTJEjpBFX5gQYd4LX9fOqoTM1T7G+w4NkAVJQZX53o3UqlKzNG0jNcYrV\numw0uTnfiowRYYgZU7TBx7tXcmSkyZ5bCdM3RvWuwQKBgQDlE7Y3L05ZZrn6KgWk\n4/oR99gXO0IUL8zpxphiwNesmZtLUIvEw3arY2G5DyZhVQj53Z7pDKSaSbxDf7zE\nsIn8SxPWu/gOApue5SsUxcN0COyHPY5Il+LQHZ8ocryyc6WeyqHJ9RXL5x2PteDi\nnO6hOQNnS2T6E/uAV9NgXCfhuQKBgQC9hZJP5wvMv1YVLtq8ZWsziC7ct/2TLlQm\nB86J8Tam69biZGCJofgiCEQ22Z4rSnP2/AHt88S5prs0a6xY00h666mHgIz/sBrY\n1Wucq4dHITJiNhD6KzdwhRz4WlClCeGIg8VcT/oO2aIeboLp+5BXNJAYKnuk2h+8\nedRlybMYYQKBgDQL2HiNTPXO+y41YfbmvShb8ULF+etwONRchL7bJaVXeQsRj8/y\nwQGLoOZU5Nl0YoeyrKoybyuG2TlUymS933vs6uL87gzw1r6xPqqHjDLO3D6V47/m\nkmfKcyDTgL/iupxrWXrzLjKXngXKwv95vFXxCC7t2FFhPOEaEzJvfbgxAoGAGSW4\nHFIUBr78tSLac1UhvFy9mxvu0bC8Ca/PgA45qjxw7ulSxfBv9FQUeRK3Ihdm+8bE\nmsZVvCybeoEvBTpDy8upWwl7rBG5/juTY95+vLly7gUui4Ngf9Wp2mpheQSuoGab\nsXwLOh02ncMcK9/tbyTSWeKJNX6b525i+H6i/QECgYEA3zxOzVp/De0fasvUyhx2\nWuwFrsqOtikEUuJUX6YUbKBnsqrWhcCR8pZ4H3YuDP22EpZDdQfj5g7yoSzqLfIv\nI91jOG7bdq6SbgEMoO86J3CBDvFeMS/4IU0RtlCOXXZnGCaJMCfgqdmRKuIJNeIf\nJ1Vv+6VTQds1ampGICSSZfU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ebook-acess-service@sr-counselling-ebook.iam.gserviceaccount.com",
+  "client_id": "102144586496326771502",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ebook-acess-service%40sr-counselling-ebook.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

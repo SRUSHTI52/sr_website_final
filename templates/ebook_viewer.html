@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure PDF Viewer</title>
+    <style>
+        body {
+            -webkit-user-select: none; /* Disable text selection */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #viewerContainer {
+            width: 80%;
+            height: 90vh;
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        canvas {
+            display: block;
+            width: 100%; /* Fit canvas width to container */
+            height: auto; /* Maintain aspect ratio */
+            position: relative;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+        }
+
+        /* Watermark styling */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 0, 0, 1); /* Red color with transparency */
+            font-size: 4rem;
+            font-weight: bold;
+            pointer-events: none; /* Disable interaction with watermark */
+            z-index: 10;
+            text-align: center;
+            user-select: none; /* Disable text selection */
+        }
+
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 0, 0, 0.3);
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+    </style>
+</head>
+<body>
+<div style="width: 100%; display: flex; align-items: center; padding: 20px; margin-left: 10px;  background : white; position : fixed;">
+    <a href="/" style="text-decoration: none; display: flex; align-items: center;">
+        <img src="/static/images/logo.png" alt="Website Logo" style="height: 50px; margin-right: 10px;">
+  
+    </a>
+</div>
+
+    <div id="viewerContainer">
+        <canvas id="pdf-render"></canvas>
+        <div class="watermark">SR Counselling</div> <!-- Watermark here -->
+    </div>
+
+    <div class="controls">
+        <button id="prev-page">Previous Page</button>
+        <span>Page: <span id="page-num"></span> / <span id="page-count"></span></span>
+        <button id="next-page">Next Page</button>
+    </div>
+
+    <!-- PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        // Disable text selection, right-click, printing and screenshots
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Disable right-click menu
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'p' || e.key === 'P')) {
+                e.preventDefault();
+                alert('Printing is disabled.');
+            }
+
+            if (e.key === 'PrintScreen') {
+                alert('Screenshots are disabled.');
+                e.preventDefault();
+            }
+        });
+
+        let url = '/static/ebooks/visa_guide.pdf'; // Your PDF file path
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageIsRendering = false,
+            pageNumIsPending = null;
+
+        const scale = 1.5;
+        const canvas = document.getElementById('pdf-render');
+        const ctx = canvas.getContext('2d');
+
+        const renderPage = (num) => {
+            pageIsRendering = true;
+
+            // Get page
+            pdfDoc.getPage(num).then(page => {
+                const viewport = page.getViewport({ scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderCtx = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                page.render(renderCtx).promise.then(() => {
+                    pageIsRendering = false;
+
+                    if (pageNumIsPending !== null) {
+                        renderPage(pageNumIsPending);
+                        pageNumIsPending = null;
+                    }
+                });
+
+                // Update page counters
+                document.getElementById('page-num').textContent = num;
+                document.getElementById('page-count').textContent = pdfDoc.numPages;
+
+                // Apply the watermark
+                addWatermark();
+            });
+        };
+
+        const queueRenderPage = (num) => {
+            if (pageIsRendering) {
+                pageNumIsPending = num;
+            } else {
+                renderPage(num);
+            }
+        };
+
+        // Show Prev Page
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        });
+
+        // Show Next Page
+        document.getElementById('next-page').addEventListener('click', () => {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        });
+
+        // Get Document
+        pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+            pdfDoc = pdfDoc_;
+            document.getElementById('page-count').textContent = pdfDoc.numPages;
+
+            // Initial render
+            renderPage(pageNum);
+        }).catch(err => {
+            console.error('Error loading PDF:', err);
+        });
+
+        // Add watermark
+        const addWatermark = () => {
+            const watermark = document.querySelector('.watermark');
+            watermark.style.display = 'block';
+        };
+
+        // Disable the screenshot key on Windows
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'PrintScreen') {
+        e.preventDefault();
+        alert('Screenshots are disabled.');
+        document.body.style.display = 'none';
+        setTimeout(() => {
+            document.body.style.display = 'block';
+        }, 1000);
+    }
+});
+
+
+        // Disables Ctrl + S to save the page
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                alert("Saving this content is disabled.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "srinternship",
+  "private_key_id": "326485aaeb1a1ff3a0fb46dd6a9cb6125c9f9336",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCnLA3/Qh9fBFsH\nAa57UtzeIBs9fR3Z9T6suNdMBP2nL/NysANJo/Fy5PH5HWeqvXm5EjBjrW67Qe8x\nzQDXhGHPsXevkmeaGnBNm131KmsgJOE9WF1rtZtuUefu9Ig91uOMwXsZ0F7URGxZ\n2mqp9xXjahfPjKcFL0tZE1hu8T+J9UvdRM/67nmjYQAm/uZsixxgdRD840KpPug7\nZ/xVdS7eD/x+TmNLKCSm4NPM1x69Amz/18bRgZc2O9+cZBdTqkAHO16CTuE6FsM/\nin8c53x/3AjM/4rmDn6nuMcwl42ZHsQ2Y4mN7lMjIH5IVkm4sk0KhJ7iSXrvphFE\nbzJVdnAfAgMBAAECggEAE2faHsXWjcQcAP3hUEWNMr0itwo9cIi3LtECL7vrP1Yh\n+i/pIcpF2U2EXU5cM1ttXt4iqd9/GX5iPYi2TqOlFblcfbq5YLqC9i9RQogbCWSJ\nP61wosk2csxP59LmYdn+bjTON8U9d4HohgGvHMMm/Pra1WgBbL5RuSm1ZqOF+bCa\nGKqpTIxG0gnR6xMWbsE+EcfQDvYT3t6oMibXK4XIC5DpEcbKAGd4xA0yRW+JWqP1\nOIsx14ujaUiDFUPG3+/dR7G0u7OxoCfYgpwCA1AMJC9IN9gjX+E8h6aqHby5Fnip\n8fN1MZvgY3uuBSGlW8cuZ4IU4tROKUI9VoGgl02D4QKBgQDcn6sAQ6LSY6pkHKtQ\nt9q0UbOLC1Hr40X52eJsUL2le2O9ReDoHZmyOQaDcgci6BbRRvmvcfRqD0GP3v56\nUFEpP3BCC2rjKNwkArZXoq/pf6EYSgMLAzqVB/Q7y3ljl34D80pS0YoibPxtMqls\nxGuLXBM738J5HoggKSdJsd870QKBgQDB+kN6KKTWKHB+vAiJ8dqQoLwZh7MNDCBs\nVEBG7dYd6s/lFPcNCL0DY1gN1y3XZMxisMQq6Q1/XMxgtQLyMQgKZpnG2Cuck4pl\nRstRICq8+jcLgZJ+bWEHLD1m03lC4OrBod3T0wZAAqApx3MaToq5Vdvr5BQi+h+G\nlu+Bl9IY7wKBgEMtLtE2xvYOuMwg2p0KTkKHegbFXJ1Zp23rRQE8GHKxvm3cQB4N\nHUZiDLSrXLbpOkFgvhgIt6YvnQPkn1G48O2BTnodpd8jCtzAIqtOcwfC/9c4efK5\nefX05Q3r57tGXm1vf9r1yHyw+K97NJFUwXY+g/DAMiPVAxff0AGlclZxAoGANaue\nAe2+9fZIcfhq0GgXlk6y3Ml8FA8X5YFGK5ng1XRDw1mSpYuWaJqTIXk5GNCt8FyC\nWnETJ/swHU3YG9TPKbmLsMXdAzybXTxCQxcIXDNLCab3Nn3jC84Eyy+V7Jg4vAyi\nSNqpbwqK8CRcR5oVrgQAjnsTyz2zfVTDvfKY0gcCgYAzFSWxfs/ZJO+Xy/F5Flir\nfVc0Nfyb7YY1dObRZN6eYVP0bakEN3FYf6gFZq7kG/RrrLg999s0GvfIZelRs96t\n2yl64ToVy7q//uLNbV1/b+XXNTSkw5yrkw85n/0F662XflcrvDns9QaQyph8QUfS\n2vpvlv1IEbk2NkHGbaVm6Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ebook-access-service@srinternship.iam.gserviceaccount.com",
+  "client_id": "103478064371158482005",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ebook-access-service%40srinternship.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

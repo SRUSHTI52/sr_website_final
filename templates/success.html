@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7; 
+        }
+        .navbar {
+            background-color: #0a4d84; 
+            display : flex;
+            justify-content : center;
+        }
+        .navbar .navbar-brand {
+
+        }
+       
+        .container {
+           margin : 0px auto;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            color: #4CAF50; /* Green success color */
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #6C0404; 
+border : none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.1);
+background-color: #6C0404;
+        }
+     
+    </style>
+</head>
+<body>
+    <!-- Navbar with SR Consultants Logo -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href='/'>
+            <img src="/static/images/logo.png" alt="SR Consultants Logo" width="50" height="50" class="d-inline-block align-top">
+    
+        </a>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <div class="card p-5">
+            <h2 class="text-success mb-4">Payment Successful!</h2>
+            <p>Thank you for purchasing our Visa Guide E-Book. Your transaction has been completed successfully.</p>
+            <div class="mt-4">
+                <a href="/#ebook" class="btn btn-primary">Return to home</a>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="alert alert-success" role="alert">
+        {{ message }}
+    </div>
+    <p>Thank you for your purchase!</p>
+    <p>Please check your email for the ebook link.</p>
+<!--    <a href="{{ url_for('home') }}" class="btn btn-primary">Return to Home</a>-->
+</div>
+
+<script>
+    // Show popup message
+    window.onload = function() {
+        alert("{{ message }}");
+    }
+</script>
+</body>
+</html>

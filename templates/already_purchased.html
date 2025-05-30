@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Guide eBook Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .msg{
+        color: #6C0404;
+        font-size : 1rem;
+
+        }
+        .highlight {
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #6C0404;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #8a0505;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You Already Have Access!</h1>
+        <p>Hello <span class="highlight">{{ name }}</span>,</p>
+        <p class="msg">You've already purchased our Visa Guide eBook. The eBook has been sent to your email address: <span class="highlight">{{ email }}</span>.</p>
+                <h3>Need Help?</h3>
+        <p>If you're having trouble accessing your eBook, please contact our support team at <a href="mailto:support@srcounselling.com">support@srcounselling.com</a>.</p>
+        <a href="/" class="btn">Return to Home Page</a>
+    </div>
+</body>
+</html>
