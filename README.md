@@ -38,7 +38,7 @@ The application is deployed on **Render** for public access and testing.
 
 ---
 
-## 🛠️ Tech Stack  
+##  Tech Stack  
 
 | Layer | Technologies Used |
 |-------|-------------------|
@@ -53,7 +53,7 @@ The application is deployed on **Render** for public access and testing.
 
 ---
 
-## ⚙️ System Architecture  
+##  System Architecture  
 
 1. **Frontend (HTML/CSS/JS):**  
    Displays the multilingual interface and user navigation structure.  
